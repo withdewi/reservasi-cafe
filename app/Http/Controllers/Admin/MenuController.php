@@ -12,7 +12,7 @@ class MenuController extends Controller
         return view('admin.menus');
     }
 
-    public function create()
+    public function createMenu()
     {
         return view('admin.add-menus');
     }

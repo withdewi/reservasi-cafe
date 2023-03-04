@@ -140,7 +140,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="index.html" class="menu-link">
+              <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -151,23 +151,29 @@
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account">Account</div>
               </a>
-            </li><li class="menu-item">
+            </li>
+            <!-- Categories -->
+            <li class="menu-item">
               <a href="/admin/categories" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-copy"></i>
                 <div data-i18n="Categories">Categories</div>
               </a>
-            <li class="menu-item">
+            </li>
+            <!-- Menus -->
+            <li class="menu-item active">
               <a href="/admin/menus" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Menus">Menus</div>
               </a>
             </li>
+            <!-- Tables -->
             <li class="menu-item">
               <a href="/admin/tables" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
                 <div data-i18n="Tables">Tables</div>
               </a>
             </li>
+            <!-- Reservations -->
             <li class="menu-item">
               <a href="/admin/reservations" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -177,21 +183,13 @@
             <!-- Misc -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
             <li class="menu-item">
-              <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                target="_blank"
-                class="menu-link"
-              >
+              <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-support"></i>
                 <div data-i18n="Support">Support</div>
               </a>
             </li>
             <li class="menu-item">
-              <a
-                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link"
-              >
+              <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="Documentation">Documentation</div>
               </a>
@@ -313,7 +311,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles /</span> Menus</h4>
+              <h4 class="fw-bold py-3"><span class="text-muted fw-light">Sparkles /</span> Menus</h4>
               <a href="admin/add-menus" class="btn btn-dark mr-5" style="margin-left: 850px; margin-bottom: 20px;">New Menu</a>
 
               <!-- Basic Bootstrap Table -->
