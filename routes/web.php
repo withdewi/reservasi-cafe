@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contoh', function() {
+    return view('admin.contoh');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -38,9 +42,10 @@ Route::get('/admin/add-categories/', [CategoryController::class, 'createCategory
 Route::post('/admin/categories/store/', [CategoryController::class, 'storeCategory'])->name('storeCategory');
 Route::get('/admin/edit-categories/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
 Route::post('/admin/edit-categories/{id}', [CategoryController::class, 'updateCategory'])->name('updateCategory');
-Route::delete('admin/categories/{id}', [CategoryController::class, 'destroy']);
+Route::get('/admin/delete-categories/{id}', [CategoryController::class, 'destroyCategory'])->name('destroyCategory');
 
 Route::get('/admin/menus', [MenuController::class, 'menu'])->name('menu');
+Route::get('/admin/add-menus/', [MenuController::class, 'createMenu'])->name('createMenu');
 
 Route::get('/admin/tables', [TableController::class, 'table'])->name('table');
 Route::get('/admin/add-tables/', [TableController::class, 'createTable'])->name('createTable');
