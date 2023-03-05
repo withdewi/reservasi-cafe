@@ -293,7 +293,7 @@
                       <tr>
                       <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $a->first_name }} {{ $a->last_name }}</strong></td>
                         <td>{{ $a->email }}</td>
-                        <td>{{ $a->no_telp }}</td>
+                        <td>0{{ $a->no_telp }}</td>
                         <td>{{ $a->date }}</td>
                         <td>{{ $a->guest_number }}</td>
                         <td>{{ $a->table_id }}</td>
@@ -303,10 +303,10 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="/admin/edit-reservations"
+                              <a class="dropdown-item" href="/admin/edit-reservations/{{ $a->id }}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <a class="dropdown-item" href="javascript:void(0);"
+                              <a class="dropdown-item" href="/admin/delete-reservations/{{ $a->id }}"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>

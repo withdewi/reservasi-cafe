@@ -317,25 +317,25 @@
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label class="form-label" for="tel_number">Phone Number</label>
+                            <label class="form-label" for="no_telp">Phone Number</label>
                             <div class="input-group input-group-merge">
                               <span class="input-group-text">ID (+62)</span>
                               <input
                                 type="text"
-                                id="tel_number"
-                                name="tel_number"
+                                id="no_telp"
+                                name="no_telp"
                                 class="form-control"
                                 placeholder="812 3024 3400"
                               />
                             </div>
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label class="form-label" for="res_date">Reservation Date</label>
+                            <label class="form-label" for="date">Reservation Date</label>
                             <div class="input-group input-group-merge">
                               <input
                                 type="date"
-                                id="res_date"
-                                name="res_date"
+                                id="date"
+                                name="date"
                                 class="form-control"
                               />
                             </div>
@@ -353,7 +353,7 @@
                         <div class="mb-3 col-md-6">
                             <label for="table_id" class="form-label">Table</label>
                             <input 
-                              type="text" 
+                              type="number" 
                               class="form-control" 
                               id="table_id" 
                               name="table_id" 

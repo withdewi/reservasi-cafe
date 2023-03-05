@@ -32,4 +32,20 @@ class AdmReservationController extends Controller
         $reservation = Reservation::find($id);
         return view('admin.edit-reservations', compact('reservation'));
     }
+
+    public function updateReservation(Request $request, $id)
+    {
+        $data = Reservation::find($id);
+        $data->update($request->all());
+
+        return redirect()->route('reservation');
+    }
+
+    public function destroyReservation(Request $request, $id) 
+    {
+        $data = Reservation::find($id);
+        $data->delete();
+
+        return redirect()->route('reservation');
+    }
 }

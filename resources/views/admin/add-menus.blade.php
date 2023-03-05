@@ -318,7 +318,8 @@
                 <div class="card mb-4">
               <!-- Account -->
               <div class="card-body">
-                      <form id="formAccountSettings" method="POST" onsubmit="return false">
+                      <form action="{{ route('storeMenu') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                           <div class="mb-3 col-md-6">
                             <label for="name" class="form-label">Name</label>
@@ -331,9 +332,18 @@
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="description" class="form-label">Price</label>
+                            <label for="image" class="form-label">Image</label>
                             <input 
-                              type="text" 
+                              type="file" 
+                              class="form-control" 
+                              id="file" 
+                              name="file" 
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="price" class="form-label">Price</label>
+                            <input 
+                              type="number" 
                               class="form-control" 
                               id="price" 
                               name="price" 

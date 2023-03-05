@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->string('image');
+            $table->string('file');
             $table->decimal('price', 10, 2);
+            $table->text('description');
+            $table->text('categories');
             $table->timestamps();
         });
     }

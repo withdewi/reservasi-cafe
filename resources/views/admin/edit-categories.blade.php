@@ -299,7 +299,7 @@
                           <label for="image" class="form-label">Image</label>
                           <div>
                             <img src="{{ asset('kategori/'.$category->file)}}" width="80px" height="80px /" style="margin-left: 0px; margin-bottom: 12px; margin-top: 3px;">
-                          </div>
+                        </div>
                           <input type="file" class="form-control" id="file" name="file"/>
                         <div class="mt-4">
                           {{-- <a href="/tumbuhan"><button type="submit" class="btn btn-secondary">Update</button></a> --}}

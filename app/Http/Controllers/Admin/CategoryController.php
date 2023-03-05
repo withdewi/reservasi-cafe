@@ -22,14 +22,6 @@ class CategoryController extends Controller
 
     public function storeCategory(Request $request)
     {
-        // $image = $request->file('image')->store('admin/categories');
-
-        // $request->validate([
-        //     'name' => 'required',
-        //     'description' => 'required',
-        //     // 'image' => 'image'
-        // ]);
-
         $data = Category::create($request->all());
 
         if($request->hasFile('file')) {

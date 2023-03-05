@@ -32,4 +32,20 @@ class TableController extends Controller
         $table = Table::find($id);
         return view('admin.edit-tables', compact('table'));
     }
+
+    public function updateTable(Request $request, $id)
+    {
+        $data = Table::find($id);
+        $data->update($request->all());
+
+        return redirect()->route('table');
+    }
+
+    public function destroyTable(Request $request, $id) 
+    {
+        $data = Table::find($id);
+        $data->delete();
+
+        return redirect()->route('table');
+    }
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->bigInteger('no_telp')->nullable();
-            $table->dateTime('date');
+            $table->date('date');
             $table->unsignedBigInteger('table_id');
             $table->integer('guest_number');
             $table->timestamps();

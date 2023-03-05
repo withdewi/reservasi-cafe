@@ -46,17 +46,24 @@ Route::get('/admin/delete-categories/{id}', [CategoryController::class, 'destroy
 
 Route::get('/admin/menus', [MenuController::class, 'menu'])->name('menu');
 Route::get('/admin/add-menus/', [MenuController::class, 'createMenu'])->name('createMenu');
+Route::post('/admin/menus/store/', [MenuController::class, 'storeMenu'])->name('storeMenu');
+Route::get('/admin/edit-menus/{id}', [MenuController::class, 'editMenu'])->name('editMenu');
+Route::post('/admin/edit-menus/{id}', [MenuController::class, 'updateMenu'])->name('updateMenu');
+Route::get('/admin/delete-menus/{id}', [MenuController::class, 'destroyMenu'])->name('destroyMenu');
 
 Route::get('/admin/tables', [TableController::class, 'table'])->name('table');
 Route::get('/admin/add-tables/', [TableController::class, 'createTable'])->name('createTable');
 Route::post('/admin/tables/store/', [TableController::class, 'storeTable'])->name('storeTable');
 Route::get('/admin/edit-tables/{id}', [TableController::class, 'editTable'])->name('editTable');
+Route::post('/admin/edit-tables/{id}', [TableController::class, 'updateTable'])->name('updateTable');
+Route::get('/admin/delete-tables/{id}', [TableController::class, 'destroyTable'])->name('destroyTable');
 
 Route::get('/admin/reservations', [AdmReservationController::class, 'reservation'])->name('reservation');
 Route::get('/admin/add-reservations/', [AdmReservationController::class, 'createReservation'])->name('createReservation');
 Route::post('/admin/reservations/store/', [AdmReservationController::class, 'storeReservation'])->name('storeReservation');
 Route::get('/admin/edit-reservations/{id}', [AdmReservationController::class, 'editReservation'])->name('editReservation');
-
+Route::post('/admin/edit-reservations/{id}', [AdmReservationController::class, 'updateReservation'])->name('updateReservation');
+Route::get('/admin/delete-reservations/{id}', [AdmReservationController::class, 'destroyReservation'])->name('destroyReservation');
 
 // User ------------------ //
 

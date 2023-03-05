@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Menus | Sparkle Cafe</title>
+    <title>Add Menus | Sparkle Cafe</title>
 
     <meta name="description" content="" />
 
@@ -311,8 +311,8 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3"><span class="text-muted fw-light">Sparkles /</span> Menus</h4>
-              <a href="admin/add-menus" class="btn btn-dark mr-5" style="margin-left: 850px; margin-bottom: 20px;">New Menu</a>
+              <h4 class="fw-bold py-3"><span class="text-muted fw-light">Sparkles /</span>Add Menus</h4>
+              <a href="/admin/add-menus" class="btn btn-dark mr-5" style="margin-left: 850px; margin-bottom: 20px;">New Menu</a>
 
               <!-- Basic Bootstrap Table -->
               <div class="card">
@@ -327,66 +327,28 @@
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                    @foreach($menu as $a)
                       <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Steak</strong></td>
-                        <td></td>
-                        <td>75.000</td>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $a->name }}</strong></td>
+                        <td><img src="{{ asset('menu/'.$a->file)}}" alt="" style="width: 80px" height="80px"></td>
+                        <td>{{ $a->price }}</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
+                              <a class="dropdown-item" href="/admin/edit-menus/{{ $a->id}}"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <a class="dropdown-item" href="javascript:void(0);"
+                              <a class="dropdown-item" href="/admin/delete-menus/{{ $a->id }}"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>Americano</strong></td>
-                        <td></td>
-                        <td>17.000</td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>Vanilla Latte</strong></td>
-                        <td></td>
-                        <td>17.000</td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
+                    @endforeach
                     </tbody>
                   </table>
                 </div>
