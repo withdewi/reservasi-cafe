@@ -118,20 +118,6 @@
           <div class="menu-inner-shadow"></div>
 
           <ul class="menu-inner py-1">
-            <!-- Dashboard -->
-            <li class="menu-item">
-              <a href="/admin" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
-              </a>
-            </li>
-            <!-- Layouts -->
-            <li class="menu-item">
-              <a href="/admin/account" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account">Account</div>
-              </a>
-            </li>
             <!-- Categories -->
             <li class="menu-item">
               <a href="/admin/categories" class="menu-link">

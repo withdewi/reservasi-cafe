@@ -29,12 +29,8 @@ Route::get('/dashboard', function () {
 
 // Admin ------------------ //
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
-
-Route::get('/admin/account', function () {
-    return view('admin.account');
+Route::get('/login', function () {
+    return view('admin.login');
 });
 
 Route::get('/admin/categories', [CategoryController::class, 'category'])->name('category');
@@ -66,18 +62,6 @@ Route::post('/admin/edit-reservations/{id}', [AdmReservationController::class, '
 Route::get('/admin/delete-reservations/{id}', [AdmReservationController::class, 'destroyReservation'])->name('destroyReservation');
 
 // User ------------------ //
-
-Route::get('/login', function () {
-    return view('user.login');
-});
-
-Route::get('/register', function () {
-    return view('user.register');
-});
-
-Route::get('/forgot-password', function () {
-    return view('user.forgot-password');
-});
 
 Route::get('/categories', function () {
     return view('user.categories');
