@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\{AdminController, CategoryController, MenuController, TableController, AdmReservationController};
-use App\Http\Controllers\User\ReservationController;
+use App\Http\Controllers\User\{ReservationController, UserMenuController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,9 +67,7 @@ Route::get('/categories', function () {
     return view('user.categories');
 });
 
-Route::get('/menus', function () {
-    return view('user.menus');
-});
+Route::get('/menus', [UserMenuController::class, 'menu'])->name('menu');
 
 Route::get('/reservations', [ReservationController::class, 'reservation'])->name('reservation');
 Route::post('/reservations/store/', [ReservationController::class, 'storeReservation'])->name('storeReservation');
