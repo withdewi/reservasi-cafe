@@ -105,7 +105,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sparkles</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -150,27 +150,6 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-          <!-- Navbar -->
-          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar">
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="bx bx-menu bx-sm"></i>
-              </a>
-            </div>
-
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..."/>
-                </div>
-              </div>
-              <!-- /Search -->
-            </div>
-          </nav>
-          <!-- / Navbar -->
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
@@ -183,7 +162,8 @@
                 <div class="card mb-4">
                   <!-- Account -->
                   <div class="card-body">
-                    <form action="{{ route('editReservation') }}" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/edit-reservations/{{ $reservation->id }}" method="POST" enctype="multipart/form-data">
+                      @csrf
                       <div class="row">
                         <div class="mb-3 col-md-6">
                           <label for="first_name" class="form-label">First Name</label>
@@ -195,7 +175,6 @@
                             value="{{ $reservation->first_name }}"
                           />
                         </div>
-                        <div class="row">
                         <div class="mb-3 col-md-6">
                           <label for="last_name" class="form-label">Last Name</label>
                           <input 
@@ -247,14 +226,14 @@
                             />
                         </div>
                         <div class="mb-3 col-md-6">
-                          <label for="reservation_id" class="form-label">Table</label>
-                          <input 
-                            type="text" 
-                            class="form-control" 
-                            id="table_id" 
-                            name="table_id" 
-                            value="{{ $reservation->table_id }}" 
-                            />
+                          <label for="table_id" class="form-label">Table</label>
+                          <select class="form-control" id="table_id" name="table_id">
+                            <option value="">Select table</option>
+                            @foreach ($table as $a)
+                            <option value="{{$a->name}}" {{$reservation->table_id == $a->name? 'selected': ''}}>
+                              {{$a->name}}</option>
+                            @endforeach
+                          </select>
                         </div>
                       </div>
                       <div class="mt-2">

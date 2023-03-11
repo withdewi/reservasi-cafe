@@ -12,4 +12,12 @@ class Table extends Model
     protected $guarded = ['id'];
 
     protected $fillable = ['name', 'guest_number', 'status', 'location'];
+
+    public function reservation(){
+        return $this->belongsTo(Reservation::class);
+    }
+
+    public function usreservation(){
+        return $this->belongsTo(Usreservation::class);
+    }
 }

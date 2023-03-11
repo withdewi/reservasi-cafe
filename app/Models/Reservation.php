@@ -12,4 +12,8 @@ class Reservation extends Model
     protected $guarded = ['id'];
 
     protected $fillable = ['first_name', 'last_name', 'email', 'no_telp', 'date', 'guest_number', 'table_id'];
+
+    public function table(){
+        return $this->hasMany(Table::class);
+    }  
 }

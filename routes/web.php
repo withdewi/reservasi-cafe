@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/contoh', function() {
@@ -37,7 +37,7 @@ Route::get('/admin/categories', [CategoryController::class, 'category'])->name('
 Route::get('/admin/add-categories/', [CategoryController::class, 'createCategory'])->name('createCategory');
 Route::post('/admin/categories/store/', [CategoryController::class, 'storeCategory'])->name('storeCategory');
 Route::get('/admin/edit-categories/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
-Route::post('/admin/edit-categories/{id}', [CategoryController::class, 'updateCategory'])->name('updateCategory');
+Route::post('/admin/edit-categorie/{id}', [CategoryController::class, 'updateCategory'])->name('updateCategory');
 Route::get('/admin/delete-categories/{id}', [CategoryController::class, 'destroyCategory'])->name('destroyCategory');
 
 Route::get('/admin/menus', [MenuController::class, 'menu'])->name('menu');
@@ -71,10 +71,8 @@ Route::get('/menus', function () {
     return view('user.menus');
 });
 
-
-
-
-
+Route::get('/reservations', [ReservationController::class, 'reservation'])->name('reservation');
+Route::post('/reservations/store/', [ReservationController::class, 'storeReservation'])->name('storeReservation');
 
 
 

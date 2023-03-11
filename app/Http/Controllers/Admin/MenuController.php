@@ -30,7 +30,7 @@ class MenuController extends Controller
         }
         return redirect()->route('menu');
     }
-    public function editCategory($id)
+    public function editMenu($id)
     {
         $menu = Menu::find($id);
         return view('admin.edit-menus', compact('menu'));

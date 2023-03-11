@@ -102,7 +102,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sparkles</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -147,27 +147,6 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-          <!-- Navbar -->
-          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar">
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="bx bx-menu bx-sm"></i>
-              </a>
-            </div>
-
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..."/>
-                </div>
-              </div>
-              <!-- /Search -->
-            </div>
-          </nav>
-          <!-- / Navbar -->
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
@@ -180,6 +159,7 @@
                     <!-- Account -->
                     <div class="card-body">
                         <form action="/admin/edit-tables/{{ $table->id }}" method="POST" enctype="multipart/form-data">
+                          @csrf
                           <div class="row">
                             <div class="mb-3 col-md-6">
                               <label for="name" class="form-label">Name</label>
@@ -200,19 +180,19 @@
                             <div class="mb-3 col-md-6">
                               <label for="status" class="form-label">Status</label>
                               <select class="form-control" id="status" name="status">
-                                <option value="Select status" selected>{{ $table->status }}</option>
-                                <option value="Pending">Pending</option>
-                                <option value="Available">Available</option>
-                                <option value="Unavailable">Unavailable</option>
+                                <option value="Select status" @if($table->status == "Select status") selected @endif>Select status</option>
+                                <option value="Pending" @if($table->status == "Pending") selected @endif>Pending</option>
+                                <option value="Available" @if($table->status == "Available") selected @endif>Available</option>
+                                <option value="Unavailable" @if($table->status == "Unavailable") selected @endif>Unavailable</option>
                               </select>
                             </div>
                             <div class="mb-3 col-md-6">
                               <label for="location" class="form-label">Location</label>
                               <select class="form-control" id="location" name="location">
-                                <option value="Select location">{{ $table->location }}</option>
-                                <option value="Front">Front</option>
-                                <option value="Inside">Inside</option>
-                                <option value="Outside">Outside</option>
+                                <option value="Select location" @if($table->location == "Select location") selected @endif>Select location</option>
+                                <option value="Front" @if($table->location == "Front") selected @endif>Front</option>
+                                <option value="Inside" @if($table->location == "Inside") selected @endif>Inside</option>
+                                <option value="Outside" @if($table->location == "Outside") selected @endif>Outside</option>
                               </select>
                             </div>
                           </div>

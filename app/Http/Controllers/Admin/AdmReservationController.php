@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use App\Models\Table;
 
 class AdmReservationController extends Controller
 {
@@ -17,7 +18,8 @@ class AdmReservationController extends Controller
     public function createReservation()
     {
         $reservation = Reservation::all();
-        return view('admin.add-reservations', compact('reservation'));
+        $table = Table::all();
+        return view('admin.add-reservations', compact('reservation', 'table'));
     }
 
     public function storeReservation(Request $request)
@@ -30,7 +32,8 @@ class AdmReservationController extends Controller
     public function editReservation($id)
     {
         $reservation = Reservation::find($id);
-        return view('admin.edit-reservations', compact('reservation'));
+        $table = Table::all();
+        return view('admin.edit-reservations', compact('reservation', 'table'));
     }
 
     public function updateReservation(Request $request, $id)
