@@ -24,7 +24,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
-    <title>Edit Menu | Sparkle Cafe</title>
+    <title>Edit Menu | Sparkles</title>
 
     <meta name="description" content="" />
 
@@ -141,6 +141,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -152,7 +159,7 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3"><span class="text-muted fw-light">Sparkles /</span> Edit Menu</h4>
+              <h4 class="fw-bold py-3"><span class="text-muted fw-light">Sparkles / Menus /</span> Edit Menu</h4>
               <div class="row">
                 <div class="col-md-12">
                   <div class="card mb-4">
@@ -190,15 +197,6 @@
                                 id="description" 
                                 name="description" 
                                 value="{{ $menu->description }}">{{ $menu->description }}</textarea>
-                            </div>
-                            <div class="mb-3 col-md-6">
-                              <label for="categories" class="form-label">Categories</label>
-                              <textarea 
-                                type="text" 
-                                class="form-control" 
-                                id="categories" 
-                                name="categories" 
-                                value="{{ $menu->categories }}">{{ $menu->categories }}</textarea>
                             </div>
                           </div>
                           <div class="mt-2">

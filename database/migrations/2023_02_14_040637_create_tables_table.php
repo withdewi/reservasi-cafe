@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('table', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('guest_number');
             $table->enum('status',['Select status', 'Pending', 'Available', 'Unavailable']);
             $table->enum('location',['Select location', 'Front', 'Inside', 'Outside']);
             $table->timestamps();

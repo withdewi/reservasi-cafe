@@ -20,6 +20,19 @@ class MenuController extends Controller
     }
     public function storeMenu(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:menus',
+            'file' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+        ],[
+            'name.required' => '*Menu wajib diisi.',
+            'name.unique' => '*Menu tidak boleh sama.',
+            'file' => '*Gambar wajib diisi.',
+            'price' => '*Harga Menu wajib diisi.',
+            'description.required' => '*Deskripsi wajib diisi.',
+        ]);
+
         $data = Menu::create($request->all());
 
         if($request->hasFile('file')) {

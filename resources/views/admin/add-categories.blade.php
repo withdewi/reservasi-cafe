@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Add Category | Sparkle Cafe</title>
+    <title>Add Category | Sparkles</title>
 
     <meta name="description" content="" />
 
@@ -166,6 +166,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -178,7 +185,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles /</span> Add Categories</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles / Categories / </span> Add Categories</h4>
 
             <div class="row">
               <div class="col-md-12">
@@ -197,6 +204,9 @@
                               id="name"
                               placeholder="Name"
                             />
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="image" class="form-label">Image</label>
@@ -206,6 +216,9 @@
                               id="file" 
                               name="file" 
                             />
+                            @error('file')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="description" class="form-label">Description</label>

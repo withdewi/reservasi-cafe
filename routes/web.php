@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\{AdminController, CategoryController, MenuController, TableController, AdmReservationController};
-use App\Http\Controllers\User\{ReservationController, UserMenuController};
+use App\Http\Controllers\Admin\{AdminController, CategoryController, MenuController, TableController, AdmReservationController, CommentController, LoginController};
+use App\Http\Controllers\User\{ReservationController, UserMenuController, UserCategoryController, UserCommentController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,23 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [UserCommentController::class, 'comment'])->name('comment');
 
-Route::get('/contoh', function() {
-    return view('admin.contoh');
-});
+Route::get('/admin', [LoginController::class, 'login']);
+Route::post('/admin', [LoginController::class, 'authenticate']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::post('/', [UserCommentController::class, 'storeComment'])->name('storeComment');
 
 // Admin ------------------ //
-
-Route::get('/login', function () {
-    return view('admin.login');
-});
 
 Route::get('/admin/categories', [CategoryController::class, 'category'])->name('category');
 Route::get('/admin/add-categories/', [CategoryController::class, 'createCategory'])->name('createCategory');
@@ -61,21 +52,17 @@ Route::get('/admin/edit-reservations/{id}', [AdmReservationController::class, 'e
 Route::post('/admin/edit-reservations/{id}', [AdmReservationController::class, 'updateReservation'])->name('updateReservation');
 Route::get('/admin/delete-reservations/{id}', [AdmReservationController::class, 'destroyReservation'])->name('destroyReservation');
 
+Route::get('/admin/comment', [CommentController::class, 'comment'])->name('dataComment');
+
 // User ------------------ //
 
-Route::get('/categories', function () {
-    return view('user.categories');
-});
+Route::get('/categories', [UserCategoryController::class, 'category'])->name('categories');
 
-Route::get('/menus', [UserMenuController::class, 'menu'])->name('menu');
+Route::get('/menus', [UserMenuController::class, 'menu'])->name('menus');
 
 Route::get('/reservations', [ReservationController::class, 'reservation'])->name('reservation');
 Route::post('/reservations/store/', [ReservationController::class, 'storeReservation'])->name('storeReservation');
 
+// Route::get('/', [UserCommentController::class, 'comment'])->name('comment');
+// Route::post('/index/store/', [UserCommentController::class, 'storeComment'])->name('storeComment');
 
-
-// Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function() {
-//     Route::get('/', [AdminController::class, 'index'])->name('index');
-// });
-
-// require __DIR__ . '/auth.php';

@@ -146,6 +146,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -174,14 +181,9 @@
                               name="name" 
                               id="name"
                               placeholder="Name" />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="guest_number" class="form-label">Guest</label>
-                            <input type="text" 
-                              class="form-control" 
-                              id="guest_number" 
-                              name="guest_number" 
-                              placeholder="Guest Number" />
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="status" class="form-label">Status</label>
@@ -191,6 +193,9 @@
                               <option value="Available">Available</option>
                               <option value="Unavailable">Unavailable</option>
                             </select>
+                            @error('status')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="location" class="form-label">Location</label>
@@ -200,6 +205,9 @@
                               <option value="Inside">Inside</option>
                               <option value="Outside">Outside</option>
                             </select>
+                            @error('location')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                           </div>
                         </div>
                         <div class="mt-2">

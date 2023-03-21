@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('file');
             $table->decimal('price', 10, 2);
             $table->text('description');
-            $table->text('categories');
             $table->timestamps();
         });
     }

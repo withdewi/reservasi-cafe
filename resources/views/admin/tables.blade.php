@@ -136,6 +136,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -157,7 +164,6 @@
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Guest</th>
                         <th>Status</th>
                         <th>Location</th>
                         <th>Actions</th>
@@ -168,7 +174,6 @@
                     @foreach($table as $a)
                       <tr>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $a->name }}</strong></td>
-                        <td>{{ $a->guest_number }}</td>
                         <td>{{ $a->status }}</td>
                         <td>{{ $a->location }}</td>
                         <td>

@@ -166,6 +166,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->

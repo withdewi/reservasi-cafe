@@ -22,6 +22,18 @@ class TableController extends Controller
 
     public function storeTable(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'guest_number' => 'required',
+            'status' => 'required',
+            'location' => 'required',
+        ],[
+            'name.required' => '*Menu wajib diisi.',
+            'guest_number.required' => '*Jumlah tamu wajib diisi.',
+            'status.required' => '*Status wajib diisi.',
+            'location.required' => '*Lokasi wajib diisi.',
+        ]);
+
         $data = Table::create($request->all());
 
         return redirect()->route('table');

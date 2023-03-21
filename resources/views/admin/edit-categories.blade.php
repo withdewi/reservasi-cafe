@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
-    <title>Edit Category | Sparkle Cafe</title>
+    <title>Edit Category | Sparkles</title>
 
     <meta name="description" content="" />
 
@@ -134,6 +134,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -145,7 +152,7 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles /</span> Edit Categories</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles / Categories /</span> Edit Categories</h4>
 
               <div class="row">
                 <div class="col-md-12">

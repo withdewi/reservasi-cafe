@@ -21,7 +21,18 @@ class CategoryController extends Controller
     }
 
     public function storeCategory(Request $request)
-    {
+    {   
+        $request->validate([
+            'name' => 'required|unique:category',
+            'description' => 'required',
+            'file' => 'required',
+        ],[
+            'name.required' => '*Kategori wajib diisi.',
+            'name.unique' => '*Kategori tidak boleh sama.',
+            'description.required' => '*Deskripsi wajib diisi.',
+            'file' => '*Gambar wajib diisi.',
+        ]);
+
         $data = Category::create($request->all());
 
         if($request->hasFile('file')) {

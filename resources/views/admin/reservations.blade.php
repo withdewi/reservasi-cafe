@@ -139,6 +139,13 @@
                 <div data-i18n="Basic">Reservations</div>
               </a>
             </li>
+            <!-- Comments -->
+            <li class="menu-item">
+              <a href="/admin/comment" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Basic">Comments</div>
+              </a>
+            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -151,7 +158,7 @@
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3"><span class="text-muted fw-light">Sparkles /</span> Reservations</h4>
-              <a href="/admin/add-reservations" class="btn btn-dark mr-5" style="margin-left: 850px; margin-bottom: 20px;">New Reservation</a>
+              
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <div class="table-responsive text-nowrap">
@@ -162,7 +169,6 @@
                         <th>Email</th>
                         <th>Phone Number</th>
                         <th>Date</th>
-                        <th>Guests</th>
                         <th>Table</th>
                         <th>Actions</th>
                       </tr>
@@ -174,7 +180,6 @@
                         <td>{{ $a->email }}</td>
                         <td>0{{ $a->no_telp }}</td>
                         <td>{{ $a->date }}</td>
-                        <td>{{ $a->guest_number }}</td>
                         <td>{{ $a->table_id }}</td>
                         <td>
                           <div class="dropdown">

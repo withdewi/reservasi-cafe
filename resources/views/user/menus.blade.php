@@ -61,22 +61,21 @@
               
               <!-- Grid Card -->
               <h6 class="pb-1 mb-4">Beverages</h6>
+              @foreach ($menu as $a)
               <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
                 <div class="col">
                   <div class="card h-100">
-                    @foreach ($menu as $a)
-                    <img class="card-img-top" src="/../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <img src="{{ asset('menus/'.$a->file)}}" alt="" style="width: 80px" height="80px">
+                    <img class="card-img-top" src="{{ asset('menu/'.$a->file)}}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">{{ $a->name }}</h5>
                       <p class="card-text">
                       {{ $a->description }}
                       </p>
                     </div>
-                    @endforeach
                   </div>
                 </div>
               </div>
+              @endforeach
 
               
               <!--/ Card layout -->

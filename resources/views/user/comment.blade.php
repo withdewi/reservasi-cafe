@@ -23,7 +23,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
-    <title>Make Reservation | Sparkles</title>
+    <title>Give Testimonial | Sparkles</title>
 
     <meta name="description" content="" />
 
@@ -59,34 +59,24 @@
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles /</span> Make Reservation</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sparkles /</span> Testimonial</h4>
 
               <div class="row">
                 <div class="col-md-12">
                   <div class="card mb-25">
                     <!-- Account -->
                     <div class="card-body">
-                      <form action="{{ route('storeReservation') }}" method="POST" enctype="multipart/form-data">
+                      <form action="{{ route('storeComment') }}" method="POST" enctype="multipart/form-data">
                       @csrf
                         <div class="row">
                           <div class="mb-3 col-md-6">
-                            <label for="first_name" class="form-label">First Name</label>
+                            <label for="name" class="form-label">Name</label>
                             <input 
                               class="form-control" 
                               type="text" 
-                              name="first_name" 
-                              id="first_name"
-                              placeholder="First Name"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="last_name" class="form-label">Last Name</label>
-                            <input 
-                              class="form-control" 
-                              type="text" 
-                              name="last_name" 
-                              id="last_name"
-                              placeholder="Last Name"
+                              name="name" 
+                              id="name"
+                              placeholder="Name"
                             />
                           </div>
                           <div class="mb-3 col-md-6">
@@ -100,39 +90,16 @@
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label class="form-label" for="no_telp">Phone Number</label>
-                            <div class="input-group input-group-merge">
-                              <span class="input-group-text">ID (+62)</span>
-                              <input
-                                type="text"
-                                id="no_telp"
-                                name="no_telp"
-                                class="form-control"
-                                placeholder="812 3024 3400"
-                              />
-                            </div>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label class="form-label" for="date">Reservation Date</label>
+                            <label class="form-label" for="message">Message</label>
                             <div class="input-group input-group-merge">
                               <input
-                                type="date"
-                                id="date"
-                                name="date"
+                                type="message"
+                                id="message"
+                                name="message"
                                 class="form-control"
+                                placeholder="Message"
                               />
                             </div>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="table_id" class="form-label">Table</label>
-                            <select class="form-control" id="table_id" name="table_id">
-                              <option value="">Select table</option>
-                              @foreach ($table as $a)
-                              <option value="{{$a->name}}">
-                                {{$a->name}}
-                              </option>
-                              @endforeach
-                            </select>
                           </div>
                         </div>
                         <div class="mt-2">
